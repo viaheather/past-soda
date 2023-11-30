@@ -1,4 +1,4 @@
-const { Schema, Types } = require("mongoose");
+const { Schema } = require("mongoose");
 
 const userSchema = new Schema({
   username: {
@@ -25,9 +25,13 @@ const userSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
+  toJSON: {
+    virtuals: true,
+  },
+  id: false,
 });
 
-postSchema.virtual("friendCount").get(function () {
+userSchema.virtual("friendCount").get(function () {
   return this.friends.length;
 });
 
