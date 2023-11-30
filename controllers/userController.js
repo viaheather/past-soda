@@ -101,12 +101,12 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // remove friend
-  async removeFriend(req, res) {
+  // delete friend
+  async deleteFriend(req, res) {
     try {
       const user = await User.findOneAndUpdate(
         { _id: req.params.userId },
-        { $pull: { assignment: { friendId: req.params.friendId } } },
+        { $pull: { friend: { friendId: req.params.friendId } } },
         { runValidators: true, new: true }
       );
 
