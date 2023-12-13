@@ -18,10 +18,10 @@ connection.once("open", async () => {
     .listCollections({ name: "user" })
     .toArray();
   if (userCheck.length) {
-    await connection.dropCollection("user");
+    await connection.dropCollection("users");
   }
-  const users = [];
 
+  const users = [];
   for (let i = 0; i < 20; i++) {
     const thoughts = getRandomThoughts(20);
 
@@ -29,11 +29,16 @@ connection.once("open", async () => {
     const first = fullName.split(" ")[0];
     const last = fullName.split(" ")[1];
 
-    users.push({
-      first,
-      last,
-      thoughts,
-    });
+    const username = `${first.toLowerCase()}_${last.toLowerCase()}`;
+
+    if (username !== null) {
+      users.push({
+        first,
+        last,
+        username,
+        thoughts,
+      });
+    }
   }
 
   await User.collection.insertMany(users);
