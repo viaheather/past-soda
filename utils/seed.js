@@ -10,7 +10,7 @@ connection.once("open", async () => {
   let thoughtsCheck = await connection.db
     .listCollections({ name: "thoughts" })
     .toArray();
-  if (thoughtCheck.length) {
+  if (thoughtsCheck.length) {
     await connection.dropCollection("thoughts");
   }
 
