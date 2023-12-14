@@ -1,10 +1,13 @@
 const router = require("express").Router();
+
 const {
   getThoughts,
   getSingleThought,
   createThought,
   updateThought,
   deleteThought,
+  createReaction,
+  deleteReaction,
 } = require("/Users/heather/Bootcamp/past-soda/controllers/thoughtsController.js");
 
 // /api/thoughts/
@@ -18,6 +21,9 @@ router
   .delete(deleteThought);
 
 // /api/thoughts/:thoughtId/reactions
-router.route("/:thoughtId/reactions").post(reactions).delete(reactions);
+router
+  .route("/:thoughtId/reactions")
+  .post(createReaction)
+  .delete(deleteReaction);
 
 module.exports = router;
