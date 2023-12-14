@@ -26,10 +26,11 @@ This is an API for a social network web application where users can share their 
 
 There are snippets of code taken from Module 18's mini project from the UofO coding bootcamp.
 
-## License
-
-MIT License
-
 ## Features
 
 MVC for the code architectural structure, Node.js, npm, NoSQL, Express.js, Mongoose, MongoDB.
+
+## Example
+
+![Walkthrough](assets/walkthrough.gif)
+Video found here: <video src="assets/walkthrough.mp4" controls title="Title"></video>
