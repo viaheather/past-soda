@@ -32,5 +32,6 @@ MVC for the code architectural structure, Node.js, npm, NoSQL, Express.js, Mongo
 
 ## Example
 
+![Video found here](https://github.com/viaheather/past-soda/blob/main/assets/walkthrough.mp4)
+
 ![Walkthrough](assets/walkthrough.gif)
-Video found here: <video src="assets/walkthrough.mp4" controls title="Title"></video>
